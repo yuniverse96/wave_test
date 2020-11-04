@@ -48,10 +48,12 @@ export class Wave {
 
         ctx.moveTo(prevX,prevY);
 
-        for (let i =1; i < this.totalPoints; i++) {
-            if(i < this.totalPoints - 1) {
-                this.points[i].update();
-            }
+        for (let i = 0; i < this.totalPoints; i++) {
+            // if(i < this.totalPoints - 1) {
+            //     this.points[i].update();
+            // } 맨 앞과 끝은 움직이지 않고 싶을때 let i = 1 로 변경 후 적용시켜 줍니다.
+
+            this.points[i].update();
 
             const cx = (prevX + this.points[i].x) / 2;
             const cy = (prevY + this.points[i].y) / 2;
